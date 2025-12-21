@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Pricing from './pages/Pricing'
@@ -13,7 +12,7 @@ import Navbar from './components/Navbar'
 // import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
    <div className='overflow-hidden'>
