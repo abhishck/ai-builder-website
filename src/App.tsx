@@ -1,5 +1,5 @@
 
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import Pricing from './pages/Pricing'
 import Projects from './pages/Projects'
@@ -12,11 +12,16 @@ import Navbar from './components/Navbar'
 // import './App.css'
 
 function App() {
+
+  const {pathname} =useLocation();
+  // console.log(pathname)
+
+  const hideNavbar =pathname.startsWith("/projects/") && pathname !== "/projects" || pathname.startsWith("/view/") || pathname.startsWith("/preview/")
   
 
   return (
    <div className='overflow-hidden'>
-    <Navbar/>
+    {!hideNavbar && <Navbar/>}
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/pricing' element={<Pricing />} />
